@@ -59,6 +59,8 @@ This is for my inclass activity which is a calculator
 The total is
 <?php echo $total ?>
 
+And that is a lot of money
+
 </form>
 </main>
 </body>
