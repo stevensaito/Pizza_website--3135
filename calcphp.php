@@ -1,5 +1,5 @@
 <?php
-
+//Im peter
 function add($A, $B)
 {
 	$sum = 	$A + $B;
