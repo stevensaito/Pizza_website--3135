@@ -22,8 +22,8 @@
 $startTime = date("H:i:s");
 echo $startTime;
 echo "<br>";
-$cenvertedTime = date('H:i:s',strtotime('+15 minute',strtotime($startTime)));
-echo 'Converted Time (added 15 minutes): '.$cenvertedTime;
+$cenvertedTime = date('H:i:s',strtotime('+30 minute',strtotime($startTime)));
+echo 'Converted Time (added 30 minutes): '.$cenvertedTime;
 ?>
  
 	<form action="index.php"
