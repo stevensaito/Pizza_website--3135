@@ -1,5 +1,5 @@
 <?php
-require_once('database.php');
+require('database.php');
 
 ?>
 <!DOCTYPE html>
@@ -16,17 +16,16 @@ require_once('database.php');
 
     <h1>Fleetwood Pizza</h1>
     <img src="pictures/home_banner.jpg" alt="pizza banner"/>
-	<p>Fleetwood Pizza
 	<p>Input your information below
-        <form action="thanks.php" 
-              id="thanks" name="submit">
+        <form action="add_order.php" method="post"
+              id="customer" name="submit">
 
 
             <label>Name:</label>
             <input type="text" name="name"><br>
 
             <label>Address:</label>
-            <input type="text" name="customerID"><br>
+            <input type="text" name="address"><br>
 			
 			<label>Phone Number:</label>
             <input type="text" name="phoneNumber"><br>

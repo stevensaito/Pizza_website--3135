@@ -24,7 +24,7 @@ require_once('database.php');
 	</form>
 	&nbsp;
 	&nbsp;
-	<img class="index" src="pictures/home_banner.jpg" alt="pizza banner" align="left"/>
+	<img src="pictures/home_banner.jpg" alt="pizza banner" align="left" height="42" width="42"/>
 	<img src="pictures/home_banner.jpg" alt="pizza banner" align="right" height="42" width="42"/>
 	
 </main>    
