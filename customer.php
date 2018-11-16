@@ -15,7 +15,7 @@ require_once('database.php');
 <main>
 
     <h1>Fleetwood Pizza</h1>
-    <img src="home_banner.jpg" alt="pizza banner"/>
+    <img src="pictures/home_banner.jpg" alt="pizza banner"/>
 	<p>Fleetwood Pizza
 	<p>Input your information below
         <form action="thanks.php" 

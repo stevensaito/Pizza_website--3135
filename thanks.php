@@ -11,8 +11,8 @@
 <main>
 
     <h1>Fleetwood Pizza</h1>
-    <img src="home_banner.jpg" alt="pizza banner"/>
-	<p>Thank you for the order!!
+    <img src="pictures/home_banner.jpg" alt="pizza banner"/>
+	<p>Thank you for your order!!
 	<p>Your order will arrive at
 	
 	
@@ -22,7 +22,7 @@
 $startTime = date("H:i:s");
 echo $startTime;
 echo "<br>";
-$cenvertedTime = date('H:i:s',strtotime('+30 minute',strtotime($startTime)));
+$cenvertedTime = date('H:i',strtotime('+30 minute',strtotime($startTime)));
 echo 'Converted Time (added 30 minutes): '.$cenvertedTime;
 ?>
  
