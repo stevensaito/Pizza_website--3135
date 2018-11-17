@@ -33,22 +33,29 @@ function calculate_total(){
     background-color: #ddd;
     color: black;
 }
+
+	#topBlackBar {
+                border-top: 20px solid #000;
+            }
+	#bottomBlackBar {
+                border-top: 55px solid #000;
+            }
 </style>
 </head>
 
 <!-- the body section -->
 <body>
 <main>
-
+<div id="topBlackBar"></div> <br>
     <h1>Fleetwood Pizza</h1>
-	<p>Confirm below that this is what you want to order<br><br>
+	<p>Confirm your order below<br><br>
 	__________________________________________________<br><br><br>
-	<b>Subtotal</b><br>
-	<b>Tax</b><br>
-	<b>Your Total</b><br>
+	<label><b>Subtotal</b></label><br>
+	<label><b>Tax</b></label><br>
+	<label><b>Your Total</b></label><br>
 	
 	<form action="customer.php">
-	<br><br><button class="block" type="submit" >Block Button</button>
+	<br><br><button class="block" type="submit" >Confirm your order</button>
 	</form>
 	
 </main>    

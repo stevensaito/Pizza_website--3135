@@ -8,18 +8,26 @@ require('database.php');
 <head>
     <title>Fleetwood Pizza</title>
     <link rel="stylesheet" type="text/css" href="main.css" />
+	<style>
+
+	#topBlackBar {
+                border-top: 20px solid #000;
+            }
+	#bottomBlackBar {
+                border-top: 55px solid #000;
+            }
+</style>
 </head>
 
 <!-- the body section -->
 <body>
 <main>
-
+<div id="topBlackBar"></div> <br>
     <h1>Fleetwood Pizza</h1>
-    <img src="pictures/home_banner.jpg" alt="pizza banner"/>
 	<p>Input your information below
-        <form action="add_order.php" method="post"
+	<img src="pictures/pizzapro.jpg" alt="pizza banner" style="width:48%" align="right"/>
+        <p><form action="add_order.php" method="post"
               id="customer" name="submit">
-
 
             <label>Name:</label>
             <input type="text" name="name"><br>
@@ -28,10 +36,11 @@ require('database.php');
             <input type="text" name="address"><br>
 			
 			<label>Phone Number:</label>
-            <input type="text" name="phoneNumber"><br>
+            <input type="text" name="phoneNumber"><br><br>
 
             <input type="submit" name="submit" value="Submit"><br>
         </form>
+		    
 	
 </main>    
 <footer></footer>
