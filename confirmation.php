@@ -34,19 +34,13 @@ function calculate_total(){
     color: black;
 }
 
-	#topBlackBar {
-                border-top: 20px solid #000;
-            }
-	#bottomBlackBar {
-                border-top: 55px solid #000;
-            }
+
 </style>
 </head>
 
 <!-- the body section -->
 <body>
 <main>
-<div id="topBlackBar"></div> <br>
     <h1>Fleetwood Pizza</h1>
 	<p>Confirm your order below<br><br>
 	__________________________________________________<br><br><br>

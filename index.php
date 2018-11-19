@@ -11,14 +11,6 @@ require_once('database.php');
 	
 	<style>
 	
-	#topBlackBar {
-                border-top: 20px solid #000;
-            }
-	#bottomBlackBar {
-                border-top: px solid #000;
-            }
-		
-	
 body, html {
     height: 100%;
     <!---margin: 0;-->
@@ -101,49 +93,38 @@ body, html {
 <!----deal--->
 .container {
     position: relative;
-    width: 50%;
+}
+
+.container_innerR {
+    position: relative;
+	top: 100px;
+	left: 63%;
+}
+.container_innerL {
+    position: relative;
+	top: 100px;
+	left: 10%;
 }
 
 .image {
   opacity: 1;
   display: block;
-  width: 100%;
-  height: auto;
   transition: .5s ease;
   backface-visibility: hidden;
 }
 
-.left {
-  transition: .5s ease;
-  opacity: 0;
+.overlay {
   position: absolute;
-  top: 80%;
-  left: 40%;
-  transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  text-align: center;
-}
-
-.right {
-  transition: .5s ease;
   opacity: 0;
-  position: absolute;
-  top: 80%;
-  left: 59%;
-  transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  text-align: center;
+  transition: .3s ease;
+  background-color: red;
 }
 
 .container:hover .image {
   opacity: 0.3;
 }
 
-.container:hover .left {
-  opacity: 1;
-}
-
-.container:hover .right {
+.container:hover .overlay {
   opacity: 1;
 }
 
@@ -157,7 +138,6 @@ body, html {
 
 <!-- the body section -->
 <body>
-<div id="topBlackBar"></div> <br>
 <div class="hero-image">
   <div class="hero-text">
     <h1 style="font-size:50px">Fleetwood Pizza</h1>
@@ -190,11 +170,13 @@ body, html {
 	
 <div class="container">
   <img src="pictures/pizza7.jpg" alt="deal1" class="image" style="width:48%" align="left">
-  <div class="left">
+  <div class="container_innerL">
+  <div class="overlay">
     <div class="text"><form action="OrderMenu.php"
               id="add_order_form" name="menu" align="center">
 	<button class="button buttonDeal" type="submit" name="menu" value="View Menu" style="height:70px;width:200px;font-size:20px">Hot Wheels Combo</button><br>
 	</form>
+	</div>
 	</div>
   </div>
 </div>
@@ -202,14 +184,18 @@ body, html {
 	
 <div class="container">
   <img src="pictures/pizza2-1.jpg" alt="deal1" class="image" style="width:48%" align="right">
-  <div class="right">
+  <div class="container_innerR">
+  <div class="overlay">
     <div class="text"><form action="OrderMenu.php"
               id="add_order_form" name="menu" align="center">
 	<button class="button buttonDeal" type="submit" name="menu" value="View Menu" style="height:70px;width:200px;font-size:20px">Flying V Combo</button><br>
 	</form>
 	</div>
+	</div>
   </div>
 </div>
+<br><br>
+<img src="pictures/pizza9-1.png" alt="pizza banner" align="left" height="125" width="759"/>
 </main>    
 <footer>	</footer>
 <br><br><br><br><div id="bottomBlackBar"></div>

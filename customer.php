@@ -10,22 +10,51 @@ require('database.php');
     <link rel="stylesheet" type="text/css" href="main.css" />
 	<style>
 
-	#topBlackBar {
-                border-top: 20px solid #000;
-            }
-	#bottomBlackBar {
-                border-top: 55px solid #000;
-            }
+.container {
+    position: relative;
+}
+.box {
+  position: absolute;
+  top: 10px;
+  right: 30px;
+}
+
+main {
+    margin-bottom: 20px;
+}
+
+.button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 12px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.button4 {
+	border-radius: 4px;
+	background-color: #f44336;
+	}
+
+
 </style>
 </head>
 
 <!-- the body section -->
 <body>
 <main>
-<div id="topBlackBar"></div> <br>
-    <h1>Fleetwood Pizza</h1>
+    
+		<div class="container"><div class="box">
+	<img src="pictures/pizzapro.jpg" alt="pizza banner" style="width:43%" align="right"/>
+	</div></div>
+	<h1>Fleetwood Pizza</h1>
 	<p>Input your information below
-	<img src="pictures/pizzapro.jpg" alt="pizza banner" style="width:48%" align="right"/>
+	
         <p><form action="add_order.php" method="post"
               id="customer" name="submit">
 
@@ -38,7 +67,7 @@ require('database.php');
 			<label>Phone Number:</label>
             <input type="text" name="phoneNumber"><br><br>
 
-            <input type="submit" name="submit" value="Submit"><br>
+            <button class="button button4" type="submit" name="submit" value="Submit">Submit<br>
         </form>
 		    
 	
