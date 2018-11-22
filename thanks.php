@@ -27,6 +27,7 @@ div {
 }
 
 .buttonO {
+	border-radius: 10px;
     background-color: #f44336; 
     color: white; 
     border: 2px solid #f44336;

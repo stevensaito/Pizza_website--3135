@@ -49,9 +49,10 @@ main {
 <body>
 <main>
     
-		<div class="container"><div class="box">
+	<!--<div class="container"><div class="box">
 	<img src="pictures/pizzapro.jpg" alt="pizza banner" style="width:43%" align="right"/>
-	</div></div>
+	</div></div>-->
+	
 	<h1>Fleetwood Pizza</h1>
 	<p>Input your information below
 	

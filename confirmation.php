@@ -1,5 +1,8 @@
 <?php
-require_once('database.php');
+session_start();
+	require_once('database.php');
+
+$foodID = $_SESSION['foodID'];
 
 function calculate_tax(){
 	return $sub * 0.12;
@@ -9,7 +12,16 @@ function calculate_total(){
 	return $tax + $sub;
 	}
 	
-
+	$test="six";
+	
+	
+$queryProducts = "SELECT * FROM menu
+					WHERE foodID = '$foodID'";
+$statement3 = $db->prepare($queryProducts);
+$statement3->execute();
+$products = $statement3->fetchAll();
+$statement3->closeCursor();
+	
 ?>
 <!DOCTYPE html>
 <html>
@@ -18,7 +30,8 @@ function calculate_total(){
     <title>Fleetwood Pizza</title>
     <link rel="stylesheet" type="text/css" href="main.css" />
 <style>
-	.block {
+.block {
+		border-radius: 10px;
     display: block;
     width: 100%;
     border: none;
@@ -42,7 +55,14 @@ function calculate_total(){
 <body>
 <main>
     <h1>Fleetwood Pizza</h1>
-	<p>Confirm your order below<br><br>
+	<p>Confirm your order below<br>
+	<?php foreach ($products as $product) : ?>
+	<br><?php echo $product['foodID']; ?>
+	<br><?php echo $product['foodName']; ?>
+	<br><?php echo $product['price']; ?>
+	<br><?php echo $product['description']; ?>
+	<?php endforeach; ?>
+	
 	__________________________________________________<br><br><br>
 	<label><b>Subtotal</b></label><br>
 	<label><b>Tax</b></label><br>

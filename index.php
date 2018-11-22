@@ -67,6 +67,7 @@ body, html {
 }
 
 .buttonO {
+	border-radius: 10px;
     background-color: #f44336; 
     color: white; 
     border: 2px solid #f44336;
@@ -142,19 +143,10 @@ body, html {
   <div class="hero-text">
     <h1 style="font-size:50px">Fleetwood Pizza</h1>
     <p>Welcome to Fleetwood Pizza</p>
-	<!---<form action="OrderMenu.php
-              id="index" name="menu" align="center">
-	<button type="submit" name="menu" value="View Menu">View Menu</button><br>
-	</form>-->
   </div>
 </div>
 
 <main>
-
-
-    <!---<h1 align="center ">Fleetwood Pizza</h1>
-	<p align="center">Welcome to Fleetwood Pizza
-	<p align="center"><font size="4">Check out our mouthwatering menu</font>--->
 	
 	<!---  ADD IN When pressed reset cart -->
 	<br><form action="OrderMenu.php"
@@ -164,17 +156,22 @@ body, html {
 	&nbsp;
 	&nbsp;
 	<br>
-	<!---<img src="pictures/pizza2.jpg" alt="pizza banner" align="left" height="238" width="340"/>
-	<img src="pictures/pizza7.jpg" alt="pizza banner" align="right" height="238" width="340"/>--->
 	
 	
 <div class="container">
   <img src="pictures/pizza7.jpg" alt="deal1" class="image" style="width:48%" align="left">
   <div class="container_innerL">
   <div class="overlay">
-    <div class="text"><form action="OrderMenu.php"
+    <div class="text">
+	<form action="confirmation.php" method="post"
               id="add_order_form" name="menu" align="center">
 	<button class="button buttonDeal" type="submit" name="menu" value="View Menu" style="height:70px;width:200px;font-size:20px">Hot Wheels Combo</button><br>
+	
+  <?php 
+  session_start();
+  $_SESSION['foodID'] = 1;
+  ?>
+  
 	</form>
 	</div>
 	</div>
@@ -186,7 +183,8 @@ body, html {
   <img src="pictures/pizza2-1.jpg" alt="deal1" class="image" style="width:48%" align="right">
   <div class="container_innerR">
   <div class="overlay">
-    <div class="text"><form action="OrderMenu.php"
+    <div class="text">
+	<form action="confirmation.php"
               id="add_order_form" name="menu" align="center">
 	<button class="button buttonDeal" type="submit" name="menu" value="View Menu" style="height:70px;width:200px;font-size:20px">Flying V Combo</button><br>
 	</form>
