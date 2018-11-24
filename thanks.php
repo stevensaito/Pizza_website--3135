@@ -5,6 +5,14 @@
     <title>Fleetwood Pizza</title>
     <link rel="stylesheet" type="text/css" href="main.css" />
 	<style>
+	
+	html {
+    background-image: url("pictures/background.jpg");
+}
+	
+	h1 {
+    color: #f44336;
+}
 div {
     border-radius: 5px;
     background-color: #f2f2f2;
@@ -63,14 +71,14 @@ div {
 	
 	<br><div><span style="font-size: 25px;">
 	<br><p align="center">Thank you for your order!
-	<p align="center">Your order will arrive at
+	<p align="center">Your order will arrive in 30 minutes at
 	
 	
 <?php
-
-$startTime = date("H:i");
+date_default_timezone_set('America/Los_Angeles');
+$startTime = date("g:i a");
 /*echo $startTime;*/
-$convertedTime = date('H:i',strtotime('+30 minute',strtotime($startTime)));
+$convertedTime = date('g:i a',strtotime('+30 minute',strtotime($startTime)));
 echo ''.$convertedTime;
 ?></span></div><br>
  

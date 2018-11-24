@@ -10,15 +10,20 @@ require_once('database.php');
     <link rel="stylesheet" type="text/css" href="main.css" />
 	
 	<style>
+
 	
 body, html {
     height: 100%;
     <!---margin: 0;-->
     font-family: Arial, Helvetica, sans-serif;
 }
+
+html {
+    background-image: url("pictures/background.jpg");
+}
 	
 .hero-image {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("pictures/pizza5.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("pictures/pizza5.jpg");
   height: 50%;
   background-position: center;
   background-repeat: no-repeat;
@@ -149,7 +154,7 @@ body, html {
 <main>
 	
 	<!---  ADD IN When pressed reset cart -->
-	<br><form action="OrderMenu.php"
+	<br><form action="menu.php"
               id="add_order_form" name="menu" align="center">
 	<button class="button buttonO" type="submit" name="menu" value="View Menu" style="height:70px;width:200px;font-size:25px">View Menu</button><br>
 	</form>
