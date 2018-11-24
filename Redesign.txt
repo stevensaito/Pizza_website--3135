@@ -1,0 +1,9 @@
+Create a shopping cart
+   We are not doing the different sizes, just the one size
+So now when customers add an item to the cart, they will go to confirmation.php and have a choice
+to look at the menu again or checkout
+HAVE BASIC
+
+FUTURE
+click add item to cart and then bring up single page of what they are ordering
+and then they click cancel or add to cart

@@ -39,7 +39,7 @@ h1 {
 	font-size: 200%;
 }
 
-.block {
+.blockRed{
 		border-radius: 10px;
     display: block;
     width: 100%;
@@ -51,7 +51,24 @@ h1 {
     text-align: center;
 	color: white;
 }
-.block:hover {
+.blockRed:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.blockGreen{
+		border-radius: 10px;
+    display: block;
+    width: 100%;
+    border: none;
+    background-color:  #28a428;
+    padding: 14px 28px;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+	color: white;
+}
+.blockGreen:hover {
     background-color: #ddd;
     color: black;
 }
@@ -77,8 +94,11 @@ h1 {
 	<label><b>Tax</b></label><br>
 	<label><b>Your Total</b></label><br>
 	
-	<form action="customer.php">
-	<br><br><button class="block" type="submit" >Confirm your order</button>
+	<form action="confirmation.php">
+	<br><br><button class="blockRed" type="submit" >Confirm your order</button>
+	</form>
+	<form action="menu.php">
+	<br><button class="blockGreen" type="submit" >Return to the menu</button>
 	</form>
 	
 </main>    
