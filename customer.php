@@ -9,6 +9,13 @@ require('database.php');
     <title>Fleetwood Pizza</title>
     <link rel="stylesheet" type="text/css" href="main.css" />
 	<style>
+	
+	html {
+    background-image: url("pictures/background.jpg");
+}
+	h1 {
+    color: #f44336;
+}
 
 .container {
     position: relative;

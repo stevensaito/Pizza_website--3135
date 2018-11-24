@@ -30,12 +30,20 @@ $statement3->closeCursor();
     <title>Fleetwood Pizza</title>
     <link rel="stylesheet" type="text/css" href="main.css" />
 <style>
+
+html {
+    background-image: url("pictures/background.jpg");
+}
+h1 {
+    color: #f44336;
+}
+
 .block {
 		border-radius: 10px;
     display: block;
     width: 100%;
     border: none;
-    background-color:  #D08504;
+    background-color:  #f44336;;
     padding: 14px 28px;
     font-size: 16px;
     cursor: pointer;
