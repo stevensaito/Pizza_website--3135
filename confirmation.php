@@ -36,6 +36,7 @@ html {
 }
 h1 {
     color: #f44336;
+	font-size: 200%;
 }
 
 .block {

@@ -1,7 +1,4 @@
-/* the styles for the HTML elements
-Problem in that the style sheet created on the specific php file overwrites this css
-Or so it seems
- */
+/* the styles for the HTML elements */
 html {
     background-image: url("pictures/background.jpg");
 }
@@ -23,16 +20,16 @@ header h1 {
 main {
     margin-bottom: 20px;
 }
-h1, h2 {
-    color: #f44336;
-}
 h1 {
-    font-size: 200%;
+    font-size: 500%;
     margin: .5em 0;
 }
 h2 {
     font-size: 120%;
     margin: .25em 0 .5em;
+}
+h1, h2 {
+    color: rgb(208, 133, 4);
 }
 ul {
     margin: 0 0 .5em 0;
