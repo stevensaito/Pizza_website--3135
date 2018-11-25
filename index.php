@@ -171,8 +171,8 @@ html {
 	<form action="confirmation.php" method="post" align="center">
 	<button class="button buttonDeal" type="submit" name="menu" value="View Menu" style="height:70px;width:200px;font-size:20px">Hot Wheels Combo</button><br>
 	
-	<input type="hidden" name="foodID"
-                           value="<?php echo $product['foodID']; ?>">
+	 <input type="hidden" name="foodID"
+                           value="24">
   
 	</form>
 	</div>
@@ -189,10 +189,10 @@ html {
 	<form action="confirmation.php" method="post" align="center">
 	<button class="button buttonDeal" type="submit" name="menu" value="View Menu" style="height:70px;width:200px;font-size:20px">Flying V Combo</button><br>
 	
-	  <?php 
-  session_start();
-  $_SESSION['foodID'] = 1;
-  ?>
+	  
+ <input type="hidden" name="foodID"
+                           value="10">
+  
 	
 	</form>
 	</div>

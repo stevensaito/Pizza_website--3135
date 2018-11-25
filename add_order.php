@@ -1,5 +1,9 @@
 <?php
 require_once('database.php');
+session_start();
+
+$cart = $_SESSION['foodName'];
+$totalPrice = $_SESSION['total'];
 
 // Get the product data
 $address = filter_input(INPUT_POST, 'address');
@@ -20,16 +24,16 @@ if ($address == null || $name == null || $phoneNumber == null) {
 
     // Add the product to the database  
     $query = 'INSERT INTO orders
-                 (address, name, phoneNumber)
+                 (address, name, phoneNumber, cart, totalPrice)
               VALUES
-                 (:address, :name, :phoneNumber)';
+                 (:address, :name, :phoneNumber, :cart, :totalPrice)';
     $statement = $db->prepare($query);
     $statement->bindValue(':address', $address);
     $statement->bindValue(':name', $name);
     $statement->bindValue(':phoneNumber', $phoneNumber);
 	//add cart and totalPrice back in once shopping cart created
-	//$statement->bindValue(':cart', $cart);
-    //$statement->bindValue(':totalPrice', $totalPrice);
+	$statement->bindValue(':cart', $cart);
+    $statement->bindValue(':totalPrice', $totalPrice);
 	$statement->execute();
     $statement->closeCursor();
 

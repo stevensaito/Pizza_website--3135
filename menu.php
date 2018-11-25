@@ -97,7 +97,9 @@ $statement3->closeCursor();
 
 ?>
 <div class="content">
-  	<?php foreach ($products as $product) : ?>
+	<?php foreach ($products as $product) : ?>
+	<?php $image_filename = 'pictures/' . $product['foodID'] . '.jpg'; ?>
+	<img src="<?php echo $image_filename; ?>" alt="pic" style="width:15%" align="right">
 	<br><b><?php echo $product['foodName']; ?></b>
 	<?php echo "     ($" ?><?php echo $product['price']; ?><?php echo ")" ?>
 	<br><?php echo $product['description']; ?>
@@ -106,6 +108,8 @@ $statement3->closeCursor();
 	<input type="hidden" name="foodID"
                            value="<?php echo $product['foodID']; ?>">
 	</form>
+	
+	
 	<br>
 	<?php endforeach; ?>
 </div>

@@ -1,5 +1,5 @@
 <?php
-//session_start();
+session_start();
 require_once('database.php');
 
 //$foodID = $_SESSION['foodID'];
@@ -41,6 +41,13 @@ $sub = $sub + $product['price'];
 endforeach;
 $tax = calculate_tax($sub);
 $total = calculate_total($tax, $sub);
+
+$_SESSION['foodID'] = $foodID;
+foreach ($products as $product) :
+$_SESSION['foodName'] = $product['foodName'];
+endforeach;
+//$_SESSION['foodName'] = $foodName;
+$_SESSION['total'] = $total;
 
 	
 ?>

@@ -15,4 +15,5 @@ FUTURE
 click add item to cart and then bring up single page of what they are ordering
 and then they click cancel or add to cart
 quantity
+format phone number
 
