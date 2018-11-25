@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <html>
+<?php
+require_once('database.php');
+?>
 <!-- the head section -->
 <head>
     <title>Fleetwood Pizza</title>
@@ -42,6 +45,35 @@ h1, h2 {
     background-color: #f1f1f1;
 }
 
+
+	<!---button--->		
+.button {
+    background-color: #b30000;/* Red */
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+.buttonO {
+	border-radius: 5px;
+    background-color: #b30000; 
+    color: white; 
+    border: 2px solid #b30000;
+}
+
+.buttonO:hover {
+    background-color: white;
+    color: black;
+	border: 2px solid #f44336;
+}
+
 </style>
 </head>
 
@@ -54,7 +86,7 @@ h1, h2 {
 <!---PIZZA---><!---PIZZA---><!---PIZZA---><!---PIZZA---><!---PIZZA---><!---PIZZA---><!---PIZZA--->
 <button class="collapsible"><b>Pizzas</b></button>
 <?php
-require_once('database.php');
+//require_once('database.php');
 
 $queryProducts = "SELECT * FROM menu
 					WHERE foodID >= 0 AND foodID <= 12";
@@ -69,18 +101,19 @@ $statement3->closeCursor();
 	<br><b><?php echo $product['foodName']; ?></b>
 	<?php echo "     ($" ?><?php echo $product['price']; ?><?php echo ")" ?>
 	<br><?php echo $product['description']; ?>
-	<form action="index.php"
-              id="add_order_form" name="menu">
-	<button type="submit" name="menu" value="home">Return Home</button><br>
+	<form action="confirmation.php" method="post">
+	<button class="button buttonO" type="submit" name="menu" value="home">Add to cart</button><br>
+	<input type="hidden" name="foodID"
+                           value="<?php echo $product['foodID']; ?>">
 	</form>
-	<br><br>
+	<br>
 	<?php endforeach; ?>
 </div>
 
 <!---WINGS----><!---WINGS----><!---WINGS----><!---WINGS----><!---WINGS----><!---WINGS----><!---WINGS---->
 <button class="collapsible"><b>Traditional Wings</b></button>
 <?php
-require_once('database.php');
+//require_once('database.php');
 
 $queryProducts = "SELECT * FROM menu
 					WHERE foodID >= 20 AND foodID <= 29";
@@ -94,14 +127,20 @@ $statement3->closeCursor();
   	<?php foreach ($products as $product) : ?>
 	<br><b><?php echo $product['foodName']; ?></b>
 	<?php echo "($" ?><?php echo $product['price']; ?><?php echo ")" ?>
-	<br><?php echo $product['description']; ?><br><br>
+	<br><?php echo $product['description']; ?>
+		<form action="confirmation.php" method="post">
+	<button class="button buttonO" type="submit" name="menu" value="home">Add to cart</button><br>
+	<input type="hidden" name="foodID"
+                           value="<?php echo $product['foodID']; ?>">
+	</form>
+	<br>
 	<?php endforeach; ?>
 </div>
 
 <!----BITES---><!----BITES---><!----BITES---><!----BITES---><!----BITES---><!----BITES--->
 <button class="collapsible"><b>Boneless Bites</b></button>
 <?php
-require_once('database.php');
+//require_once('database.php');
 
 $queryProducts = "SELECT * FROM menu
 					WHERE foodID >= 30 AND foodID <= 39";
@@ -115,14 +154,20 @@ $statement3->closeCursor();
   	<?php foreach ($products as $product) : ?>
 	<br><b><?php echo $product['foodName']; ?></b>
 	<?php echo "     ($" ?><?php echo $product['price']; ?><?php echo ")" ?>
-	<br><?php echo $product['description']; ?><br><br>
+	<br><?php echo $product['description']; ?>
+		<form action="confirmation.php" method="post">
+	<button class="button buttonO" type="submit" name="menu" value="home">Add to cart</button><br>
+	<input type="hidden" name="foodID"
+                           value="<?php echo $product['foodID']; ?>">
+	</form>
+	<br>
 	<?php endforeach; ?>
 </div>
 
 <!----PASTA---><!----PASTA---><!----PASTA---><!----PASTA---><!----PASTA---><!----PASTA---><!----PASTA--->
 <button class="collapsible"><b>Pastas</b></button>
 <?php
-require_once('database.php');
+//require_once('database.php');
 
 $queryProducts = "SELECT * FROM menu
 					WHERE foodID >= 40 AND foodID <= 49";
@@ -136,7 +181,13 @@ $statement3->closeCursor();
   	<?php foreach ($products as $product) : ?>
 	<br><b><?php echo $product['foodName']; ?></b>
 	<?php echo "     ($" ?><?php echo $product['price']; ?><?php echo ")" ?>
-	<br><?php echo $product['description']; ?><br><br>
+	<br><?php echo $product['description']; ?>
+		<form action="confirmation.php" method="post">
+	<button class="button buttonO" type="submit" name="menu" value="home">Add to cart</button><br>
+	<input type="hidden" name="foodID"
+                           value="<?php echo $product['foodID']; ?>">
+	</form>
+	<br>
 	<?php endforeach; ?>
 </div>
 	

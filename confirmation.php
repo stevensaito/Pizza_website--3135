@@ -1,26 +1,47 @@
 <?php
-session_start();
-	require_once('database.php');
+//session_start();
+require_once('database.php');
 
-$foodID = $_SESSION['foodID'];
+//$foodID = $_SESSION['foodID'];
+$foodID = filter_input(INPUT_POST, 'foodID', FILTER_VALIDATE_INT);
+$sub = 0;
 
-function calculate_tax(){
+function add_cart(){
+	return $sub * 0.12;
+	}
+
+function calculate_tax($sub){
+	//echo " calculate_tax ";
+	//echo $sub;
 	return $sub * 0.12;
 	}
 	
-function calculate_total(){
+function calculate_total($tax, $sub){
+	//echo " calculate_total ";
+	//echo $tax;
+	//echo " ____  ";
+	//echo $sub;
 	return $tax + $sub;
 	}
 	
-	$test="six";
+	//$test="six";
 	
 	
+//$queryProducts = "SELECT * FROM menu
+					//WHERE foodID < 3";
 $queryProducts = "SELECT * FROM menu
 					WHERE foodID = '$foodID'";
 $statement3 = $db->prepare($queryProducts);
 $statement3->execute();
 $products = $statement3->fetchAll();
 $statement3->closeCursor();
+
+foreach ($products as $product) :
+$sub = $sub + $product['price'];
+endforeach;
+$tax = calculate_tax($sub);
+$total = calculate_total($tax, $sub);
+
 	
 ?>
 <!DOCTYPE html>
@@ -81,20 +102,22 @@ h1 {
 <body>
 <main>
     <h1>Fleetwood Pizza</h1>
-	<p>Confirm your order below<br>
+	<p>Confirm your order below<br><br>
+	<b>Item</b> &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;   <b>Price</b>
+	<!---MAYBE MAKE A TABLE FOR THIS--><!---MAYBE MAKE A TABLE FOR THIS-->
+	<?php   //echo $foodID ?><!--<br>-->
 	<?php foreach ($products as $product) : ?>
-	<br><?php echo $product['foodID']; ?>
-	<br><?php echo $product['foodName']; ?>
-	<br><?php echo $product['price']; ?>
-	<br><?php echo $product['description']; ?>
+	<br><?php //echo $product['foodID']; ?>
+	<br><?php echo $product['foodName']; ?> &emsp;&emsp;&emsp; <?php echo $product['price']; ?>
+	<br><?php //echo $product['description']; ?>
 	<?php endforeach; ?>
 	
-	__________________________________________________<br><br><br>
-	<label><b>Subtotal</b></label><br>
-	<label><b>Tax</b></label><br>
-	<label><b>Your Total</b></label><br>
+	<br>__________________________________________________<br><br><br>
+	<label><b>Subtotal</b></label>&emsp;&emsp;&emsp;  $<?php echo $sub ?>  <br>
+	<label><b>Tax</b></label>&emsp;&emsp;&emsp;  $<?php echo number_format($tax,2) ?> <br>
+	<label><b>Your Total</b></label>&emsp;&emsp;&emsp; $<?php echo number_format($total, 2) ?> <br>
 	
-	<form action="confirmation.php">
+	<form action="customer.php">
 	<br><br><button class="blockRed" type="submit" >Confirm your order</button>
 	</form>
 	<form action="menu.php">

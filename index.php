@@ -168,14 +168,11 @@ html {
   <div class="container_innerL">
   <div class="overlay">
     <div class="text">
-	<form action="confirmation.php" method="post"
-              id="add_order_form" name="menu" align="center">
+	<form action="confirmation.php" method="post" align="center">
 	<button class="button buttonDeal" type="submit" name="menu" value="View Menu" style="height:70px;width:200px;font-size:20px">Hot Wheels Combo</button><br>
 	
-  <?php 
-  session_start();
-  $_SESSION['foodID'] = 1;
-  ?>
+	<input type="hidden" name="foodID"
+                           value="<?php echo $product['foodID']; ?>">
   
 	</form>
 	</div>
@@ -189,9 +186,14 @@ html {
   <div class="container_innerR">
   <div class="overlay">
     <div class="text">
-	<form action="confirmation.php"
-              id="add_order_form" name="menu" align="center">
+	<form action="confirmation.php" method="post" align="center">
 	<button class="button buttonDeal" type="submit" name="menu" value="View Menu" style="height:70px;width:200px;font-size:20px">Flying V Combo</button><br>
+	
+	  <?php 
+  session_start();
+  $_SESSION['foodID'] = 1;
+  ?>
+	
 	</form>
 	</div>
 	</div>

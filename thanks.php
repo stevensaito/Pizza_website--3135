@@ -48,16 +48,6 @@ div {
 	border: 2px solid #f44336;
 }
 
-.buttonDeal {
-    background-color: white; 
-    color: black; 
-    border: 2px solid #f44336;
-}
-
-.buttonDeal:hover {
-    background-color: #f44336;
-    color: white;
-}
 <!---button--->
 
 	</style>
