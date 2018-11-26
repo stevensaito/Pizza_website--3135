@@ -89,13 +89,13 @@ main {
               id="customer" name="submit">
 
             <label>Name:</label>
-            <input type="text" name="name"><br>
+            <input type="text" name="name" required/><br>
 
             <label>Address:</label>
-            <input type="text" name="address"><br>
+            <input type="text" name="address" required/><br>
 			
 			<label>Phone Number:</label>
-            <input type="text" name="phoneNumber"><br><br>
+            <input type="tel" pattern="[0-9]{10}" name="phoneNumber" required /><br><br>
 
             <button class="button button4" type="submit" name="submit" value="Submit">Submit<br>
         </form>
