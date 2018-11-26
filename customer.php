@@ -6,10 +6,25 @@ require('database.php');
 //echo "<br>";
 $foodID = $_SESSION['foodID'];
 //echo $_SESSION['foodName'];
-$foodName = $_SESSION['foodName'];
+//$foodName = $_SESSION['foodName'];
 //echo "<br>";
 //echo $_SESSION['total'];
 $total = $_SESSION['total'];
+
+
+$cars=array("Volvo","BMW","Toyota");
+//print_r ($cars);
+//echo "<br>";
+//echo implode(", ", $cars);
+$cart = implode(", ", $cars);
+//echo "<br>";
+//echo "This is after implode " . $foodName;
+$_SESSION['cart'] = $cart;	
+
+
+//USE THIS TO PRINT ALL SESSION VALUES STORED
+<?php //print_r($_SESSION); ?>
+
 
 ?>
 <!DOCTYPE html>

@@ -58,7 +58,7 @@ div {
 <main>
 
     <h1 align="center">Fleetwood Pizza</h1>
-    <center><img src="pictures/pizzadel-1.jpg" alt="pizza delivery"/></center>
+    <center><img src="pictures/pizzadel-1.jpg" alt="pizza delivery" style="width:80%"/></center>
 	
 	<br><div><span style="font-size: 25px;">
 	<br><p align="center">Thank you for your order!

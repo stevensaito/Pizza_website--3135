@@ -2,7 +2,7 @@
 require_once('database.php');
 session_start();
 
-$cart = $_SESSION['foodName'];
+$cart = $_SESSION['cart'];
 $totalPrice = $_SESSION['total'];
 
 // Get the product data

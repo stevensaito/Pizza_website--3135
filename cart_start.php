@@ -2,10 +2,10 @@
 // Start session management
 session_start();
 
-// Create a cart array if needed
+// Create a cart array if needed - CART UPDATE FROM STARTS
 if (empty($_SESSION['cart13'])) { $_SESSION['cart13'] = array(); }
 
-// Create a table of products
+// Create a table of products//////////////////////////THE ARRAY
 $products = array();
 $products['MMS-1754'] = array('name' => 'Flute', 'cost' => '149.50');
 $products['MMS-6289'] = array('name' => 'Trumpet', 'cost' => '199.50');
@@ -14,7 +14,7 @@ $products['MMS-3408'] = array('name' => 'Clarinet', 'cost' => '299.50');
 // Include cart functions
 require_once('cart.php');
 
-// Get the sort key
+// Get the sort key   THIS AFFECTS THE CATEGORIES ON THE CART_VIEW
 $sort_key = filter_input(INPUT_POST, 'sortkey');
 if ($sort_key === NULL) { $sort_key = 'name'; }
 
@@ -22,12 +22,12 @@ if ($sort_key === NULL) { $sort_key = 'name'; }
 $action = filter_input(INPUT_POST, 'action');
 if ($action === NULL) {
     $action = filter_input(INPUT_GET, 'action');
-    if ($action === NULL) {
+    if ($action === NULL) {  /////THIS INITIALIZES THE DEFAULT PAGE
         $action = 'show_add_item';
     }
 }
 
-// Add or update cart as needed
+// Add or update cart as needed DEPENDING ON ACTION SELECTED FROM BUTTONS AND SUCH
 switch($action) {
     case 'add':
         $key = filter_input(INPUT_POST, 'productkey');

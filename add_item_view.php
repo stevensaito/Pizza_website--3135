@@ -14,7 +14,11 @@
             <input type="hidden" name="action" value="add">
 
             <label>Name:</label>
+			
+			
+			
             <select name="productkey">
+			<!----------------USES $key as loop, product is one item---------------->
             <?php foreach($products as $key => $product) :
                 $cost = number_format($product['cost'], 2);
                 $name = $product['name'];
@@ -27,6 +31,9 @@
             </select><br>
 			<br>
 
+			
+			
+			
             <label>&nbsp;</label>
             <input type="submit" value="Add Item">
         </form>

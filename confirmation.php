@@ -25,8 +25,12 @@ function calculate_total($tax, $sub){
 	}
 	
 	//$test="six";
+
+
+
+
 	
-	
+//this shows multiple
 //$queryProducts = "SELECT * FROM menu
 					//WHERE foodID < 3";
 $queryProducts = "SELECT * FROM menu
@@ -44,7 +48,7 @@ $total = calculate_total($tax, $sub);
 
 $_SESSION['foodID'] = $foodID;
 foreach ($products as $product) :
-$_SESSION['foodName'] = $product['foodName'];
+$_SESSION['cart'] = $product['foodName'];
 endforeach;
 //$_SESSION['foodName'] = $foodName;
 $_SESSION['total'] = $total;
@@ -123,6 +127,16 @@ h1 {
 	<label><b>Subtotal</b></label>&emsp;&emsp;&emsp;  $<?php echo $sub ?>  <br>
 	<label><b>Tax</b></label>&emsp;&emsp;&emsp;  $<?php echo number_format($tax,2) ?> <br>
 	<label><b>Your Total</b></label>&emsp;&emsp;&emsp; $<?php echo number_format($total, 2) ?> <br>
+	
+	<!--
+	<form action="confirmation.php">
+	<button class="	" type="submit" >Empty cart</button>
+	<?php 
+	//unset($_SESSION['cart13']);
+        //include('confirmation.php');
+		?>
+	</form>
+	-->
 	
 	<form action="customer.php">
 	<br><br><button class="blockRed" type="submit" >Confirm your order</button>
