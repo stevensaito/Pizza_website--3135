@@ -6,7 +6,7 @@ require('database.php');
 //echo "<br>";
 $foodID = $_SESSION['foodID'];
 //echo $_SESSION['foodName'];
-$foodName = $_SESSION['foodName'];
+//$foodName = $_SESSION['foodName'];
 //echo "<br>";
 //echo $_SESSION['total'];
 $total = $_SESSION['total'];

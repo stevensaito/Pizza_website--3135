@@ -27,6 +27,9 @@ CREATE TABLE cart (
 	foodID						INT(50)			NOT NULL,	
 	
  
+ 
+ 
+ 
 	PRIMARY KEY (foodID)
 
 );

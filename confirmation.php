@@ -2,23 +2,15 @@
 session_start();
 require_once('database.php');
 
-	
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
 		
 		
 //$foodID = $_SESSION['foodID'];
 $foodID = filter_input(INPUT_POST, 'foodID', FILTER_VALIDATE_INT);
 $sub = 0;
 
+
+
+$sql = "INSERT INTO cart VALUES ('$foodID')";
 
 function add_cart(){
 	return $sub * 0.12;
@@ -41,33 +33,7 @@ function calculate_total($tax, $sub){
 	//$test="six";
 
 	
-		//implode function
-		$foodID = 'hi';
-		$foodName = 'hey';
-		$price = 'boo';
-
-		$foodData = array(
-			'foodID' => $foodID,
-			'foodName' => $foodName,
-			'price' => $price
-
-		);
-		//print_r($foodData);
-
-
-
-		$fields_sql = '`' . implode('`,`', array_keys($foodData)). '`';
-
-		$values_sql = '\''. implode('\',\'', $foodData) . '\'';
-
-
-		// was using ', now use back tick `
-		$sql = "
-			INSERT INTO `table`($fields_sql)
-				VALUES('$foodID','$foodName','price')";
-
-		echo $sql;	
-			
+	
 	
 //this shows multiple
 //$queryProducts = "SELECT * FROM menu
@@ -160,22 +126,23 @@ h1 {
 	<br><?php //echo $product['foodID']; ?>
 	<br><?php echo $product['foodName']; ?> &emsp;&emsp;&emsp; <?php echo $product['price']; ?>
 	<br><?php //echo $product['description']; ?>
-	<?php endforeach; ?>
 	
+	
+	<?php endforeach; ?>
+	<?php for($row = 0; $row < 4; $row++) {
+		echo "<ul>";
+		for ($col = 0; $col< 3; $col++) {
+		echo "<li>".$food[$row][$col]."</li>";
+		}
+	echo "</ul>";
+	}
+	?>
 	<br>__________________________________________________<br><br><br>
 	<label><b>Subtotal</b></label>&emsp;&emsp;&emsp;  $<?php echo $sub ?>  <br>
 	<label><b>Tax</b></label>&emsp;&emsp;&emsp;  $<?php echo number_format($tax,2) ?> <br>
 	<label><b>Your Total</b></label>&emsp;&emsp;&emsp; $<?php echo number_format($total, 2) ?> <br>
 	
-	<!--
-	<form action="confirmation.php">
-	<button class="	" type="submit" >Empty cart</button>
-	<?php 
-	//unset($_SESSION['cart13']);
-        //include('confirmation.php');
-		?>
-	</form>
-	-->
+	
 	
 	<form action="customer.php">
 	<br><br><button class="blockRed" type="submit" >Confirm your order</button>
