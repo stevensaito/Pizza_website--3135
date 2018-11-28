@@ -23,6 +23,15 @@ CREATE TABLE orders (
 );
 
 
+CREATE TABLE cart (
+	foodID						INT(50)			NOT NULL,	
+	
+ 
+	PRIMARY KEY (foodID)
+
+);
+
+
 INSERT INTO menu VALUES
 (1, 'Pepporoni Pizza', '13.99', 'Double pepperoni and extra pizza mozzarella. 12" Medium'),
 (2, 'BBQ Chicken Pizza', '14.99', 'Ultimate BBQ sauce, smoked aged cheddar cheese, grilled chicken strips, red onion, and green peppers. 12" Medium'),
@@ -60,6 +69,13 @@ INSERT INTO menu VALUES
 INSERT INTO orders VALUES
 (100, 'Ryan Sakaki', '6045747898', '12666 72 Ave', '2 M Pepporoni Pizza', '35.99'),
 (101, 'Craig Spence', '7788088870', '3700 Willingdon Ave','1 l BBQ Chicken Pizza ', '20,99');
+
+
+
+
+
+
+
 
 -- create the users and grant priveleges to those users
 GRANT SELECT, INSERT, DELETE, UPDATE

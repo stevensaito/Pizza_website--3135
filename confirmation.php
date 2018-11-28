@@ -2,9 +2,23 @@
 session_start();
 require_once('database.php');
 
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 //$foodID = $_SESSION['foodID'];
 $foodID = filter_input(INPUT_POST, 'foodID', FILTER_VALIDATE_INT);
 $sub = 0;
+
 
 function add_cart(){
 	return $sub * 0.12;
@@ -26,9 +40,34 @@ function calculate_total($tax, $sub){
 	
 	//$test="six";
 
+	
+		//implode function
+		$foodID = 'hi';
+		$foodName = 'hey';
+		$price = 'boo';
+
+		$foodData = array(
+			'foodID' => $foodID,
+			'foodName' => $foodName,
+			'price' => $price
+
+		);
+		//print_r($foodData);
 
 
 
+		$fields_sql = '`' . implode('`,`', array_keys($foodData)). '`';
+
+		$values_sql = '\''. implode('\',\'', $foodData) . '\'';
+
+
+		// was using ', now use back tick `
+		$sql = "
+			INSERT INTO `table`($fields_sql)
+				VALUES('$foodID','$foodName','price')";
+
+		echo $sql;	
+			
 	
 //this shows multiple
 //$queryProducts = "SELECT * FROM menu
