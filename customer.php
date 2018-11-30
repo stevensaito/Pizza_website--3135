@@ -109,13 +109,13 @@ main {
               id="customer" name="submit">
 
             <label>Name:</label>
-            <input type="text" name="name" required/><br>
+            <input type="text" name="name" placeholder="John Smith" required/><br>
 
             <label>Address:</label>
-            <input type="text" name="address" required/><br>
+            <input type="text" name="address" placeholder="4321 Lesley Street" required/><br>
 			
 			<label>Phone Number:</label>
-            <input type="tel" pattern="[0-9]{10}" name="phoneNumber" required /><br><br>
+            <input type="tel" pattern="[0-9]{10}" name="phoneNumber" placeholder="1234567890" required /><br><br>
 
             <button class="buttonGreen" type="submit" name="submit" value="Submit">Submit</button>
         </form>
