@@ -147,7 +147,7 @@ Place your order
         <nav>
 		
         <ul>
-		<img src = "pictures/pepperoni.jpg" alt="pepperoni pizza"  style="width:128px;height:128px;"/>
+		<img src = "pictures/1.jpg" alt="pepperoni pizza"  style="width:128px;height:128px;"/>
 		
 		
             <!-- add items individually from each choice -->
@@ -160,7 +160,7 @@ Place your order
 	&nbsp;
 	<br>
 	
-	<img src = "pictures/hawaiian.jpg" alt="hawaiian pizza" style="width:128px;height:128px;"/>
+	<img src = "pictures/6.jpg" alt="hawaiian pizza" style="width:128px;height:128px;"/>
             <!-- display links for all categories -->
 	<br><form action="Sub Menu.php"
               id="sub_order_form" name="Cheese" align="center">
@@ -170,7 +170,7 @@ Place your order
 	&nbsp;
 	<br>
 	
-	<img src = "pictures/cheese.jpg" alt="cheese pizza" style="width:128px;height:128px;"/>		
+	<img src = "pictures/3.jpg" alt="cheese pizza" style="width:128px;height:128px;"/>		
             <!-- display links for all categories -->
 	<br><form action="Sub Menu.php"
               id="sub_order_form" name="Hawaiian" align="center">
@@ -189,7 +189,7 @@ Place your order
         <nav>
 		
 		<ul>
-				<img src = "pictures/lasagna.jpg" alt="lasanga" style="width:128px;height:128px;"/>
+				<img src = "pictures/42.jpg" alt="lasanga" style="width:128px;height:128px;"/>
 		
        <!-- add items individually from each choice -->
                        

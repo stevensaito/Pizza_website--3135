@@ -23,20 +23,8 @@ CREATE TABLE orders (
 );
 
 
-CREATE TABLE cart (
-	foodID						INT(50)			NOT NULL,	
-	
- 
- 
- 
- 
-	PRIMARY KEY (foodID)
-
-);
-
-
 INSERT INTO menu VALUES
-(1, 'Pepporoni Pizza', '13.99', 'Double pepperoni and extra pizza mozzarella. 12" Medium'),
+(1, 'Pepperoni Pizza', '13.99', 'Double pepperoni and extra pizza mozzarella. 12" Medium'),
 (2, 'BBQ Chicken Pizza', '14.99', 'Ultimate BBQ sauce, smoked aged cheddar cheese, grilled chicken strips, red onion, and green peppers. 12" Medium'),
 (3, 'Cheese Pizza', '12.99', 'Extra pizza mozzarella and two of your favourite toppings. 12" Medium'),
 (4, 'Meat Lovers Pizza', '14.99', 'Pepperoni, Italian sausage, mild sausage, beef topping, ham, bacon crumble and pizza mozzarella. 12" Medium'),
@@ -70,15 +58,8 @@ INSERT INTO menu VALUES
 
 -- incrementing for customerNum
 INSERT INTO orders VALUES
-(100, 'Ryan Sakaki', '6045747898', '12666 72 Ave', '2 M Pepporoni Pizza', '35.99'),
-(101, 'Craig Spence', '7788088870', '3700 Willingdon Ave','1 l BBQ Chicken Pizza ', '20,99');
-
-
-
-
-
-
-
+(100, 'Ryan Sakaki', '6045747898', '12666 72 Ave', 'Pepporoni Pizza (2)', '35.99'),
+(101, 'Craig Spence', '7788088870', '3700 Willingdon Ave','Creamy Chicken Alfredo Meal (1), Canadian Pizza (2)', '33.98');
 
 -- create the users and grant priveleges to those users
 GRANT SELECT, INSERT, DELETE, UPDATE

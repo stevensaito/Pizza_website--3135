@@ -2,6 +2,7 @@
 <html>
 <?php
 require_once('database.php');
+
 ?>
 <!-- the head section -->
 <head>
@@ -97,19 +98,20 @@ $statement3->closeCursor();
 
 ?>
 <div class="content">
-	<?php foreach ($products as $product) : ?>
+
+	<?php foreach ($products as $key => $product) : ?>
 	<?php $image_filename = 'pictures/' . $product['foodID'] . '.jpg'; ?>
 	<img src="<?php echo $image_filename; ?>" alt="pic" style="width:15%" align="right">
 	<br><b><?php echo $product['foodName']; ?></b>
 	<?php echo "     ($" ?><?php echo $product['price']; ?><?php echo ")" ?>
 	<br><?php echo $product['description']; ?>
-	<form action="confirmation.php" method="post">
+	<form action="" method="post">
+	<input type="hidden" name="action" value="add">
 	<button class="button buttonO" type="submit" name="menu" value="home">Add to cart</button><br>
 	<input type="hidden" name="foodID"
-                           value="<?php echo $product['foodID']; ?>">
+                           value="<?php echo $product['foodID']; ?>">				
+							<?php $name = $product['foodName']; ?>
 	</form>
-	
-	
 	<br>
 	<?php endforeach; ?>
 </div>
@@ -134,10 +136,12 @@ $statement3->closeCursor();
 	<br><b><?php echo $product['foodName']; ?></b>
 	<?php echo "($" ?><?php echo $product['price']; ?><?php echo ")" ?>
 	<br><?php echo $product['description']; ?>
-		<form action="confirmation.php" method="post">
+	<form action="" method="post">
+		<input type="hidden" name="action" value="add">
 	<button class="button buttonO" type="submit" name="menu" value="home">Add to cart</button><br>
 	<input type="hidden" name="foodID"
                            value="<?php echo $product['foodID']; ?>">
+						   <?php $name = $product['foodName']; ?>
 	</form>
 	<br>
 	<?php endforeach; ?>
@@ -163,10 +167,12 @@ $statement3->closeCursor();
 	<br><b><?php echo $product['foodName']; ?></b>
 	<?php echo "     ($" ?><?php echo $product['price']; ?><?php echo ")" ?>
 	<br><?php echo $product['description']; ?>
-		<form action="confirmation.php" method="post">
+	<form action="" method="post">
+		<input type="hidden" name="action" value="add">
 	<button class="button buttonO" type="submit" name="menu" value="home">Add to cart</button><br>
 	<input type="hidden" name="foodID"
                            value="<?php echo $product['foodID']; ?>">
+						   <?php $name = $product['foodName']; ?>
 	</form>
 	<br>
 	<?php endforeach; ?>
@@ -192,10 +198,12 @@ $statement3->closeCursor();
 	<br><b><?php echo $product['foodName']; ?></b>
 	<?php echo "     ($" ?><?php echo $product['price']; ?><?php echo ")" ?>
 	<br><?php echo $product['description']; ?>
-		<form action="confirmation.php" method="post">
+	<form action="" method="post">
+		<input type="hidden" name="action" value="add">
 	<button class="button buttonO" type="submit" name="menu" value="home">Add to cart</button><br>
 	<input type="hidden" name="foodID"
                            value="<?php echo $product['foodID']; ?>">
+						   <?php $name = $product['foodName']; ?>
 	</form>
 	<br>
 	<?php endforeach; ?>
@@ -228,3 +236,5 @@ for (i = 0; i < coll.length; i++) {
 
 
 
+
+</html>

@@ -35,21 +35,17 @@ $action = filter_input(INPUT_POST, 'action');
 if ($action === NULL) {
     $action = filter_input(INPUT_GET, 'action');
     if ($action === NULL) {  /////THIS INITIALIZES THE DEFAULT PAGE
-        //$action = 'show_add_item';
-		include('menu.php');
+        $action = 'show_add_item';
     }
 }
 
 // Add or update cart as needed DEPENDING ON ACTION SELECTED FROM BUTTONS AND SUCH
 switch($action) {
     case 'add':
-        $key = filter_input(INPUT_POST, 'foodID'); //productkey is from the select tag
-		//echo $key; //Shows value input for key
-        $quantity  = 1;//filter_input(INPUT_POST, 'itemqty');
-		//echo $quantity;
+        $key = filter_input(INPUT_POST, 'productkey');
+        $quantity  = filter_input(INPUT_POST, 'itemqty');
         cart\add_item($key, $quantity);
-        //include('cart_view.php');
-		include('confirmation.php');
+        include('cart_view.php');
         break;
     case 'update':
         $new_qty_list = filter_input(INPUT_POST, 'newqty', 
@@ -60,22 +56,19 @@ switch($action) {
             }
         }
         cart\sort($sort_key);
-        //include('cart_view.php');
-		include('confirmation.php');
+        include('cart_view.php');
         break;
     case 'show_cart':
         cart\sort($sort_key);
-        //include('cart_view.php');
-		include('confirmation.php');
+        include('cart_view.php');
         break;
 		//THIS IS SHOWN FIRST, CHANGE TO MENU.php
     case 'show_add_item':
-        include('menu.php');
+        include('add_item_view.php');
         break;
     case 'empty_cart':
         unset($_SESSION['cart13']);
-        //include('cart_view.php');
-		include('confirmation.php');
+        include('cart_view.php');
         break;
 }
 ?>

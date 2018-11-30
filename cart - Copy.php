@@ -47,7 +47,7 @@ namespace cart {
     // Get cart subtotal
     function get_subtotal() {
         $subtotal = 0;
-			foreach ($_SESSION['cart13'] as $item) {
+        foreach ($_SESSION['cart13'] as $item) {
             $subtotal += $item['total'];
         }
         $subtotal_f = number_format($subtotal, 2);

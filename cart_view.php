@@ -16,8 +16,8 @@
             <p>There are no items in your cart.</p>
 			<!-----------------------------------CART IS EMPTY-->
         <?php else: ?>
-            <form action="." method="post">
-                <input type="hidden" name="action" value="update">
+            <form action="" method="post">
+                <input type="hidden" name="action" value="empty_cart">
                 <table>
                     <tr id="cart_header"> <!----------------HEADERS----------------><!----------------HEADERS---------------->
                         <th class="left">
@@ -108,9 +108,27 @@
                 </p>
             </form>
         <?php endif; ?>
+		
+<!---------------CART--------><!---------------CART--------><!---------------CART-------->
+		<?php /*$customerOrder=array();
+foreach( $_SESSION['cart13'] as $key => $item ) :
+$custOrderArray [] = $item['name'] . " (" . $item['qty'] . ")";	
+endforeach;
+echo '<pre>'; print_r($custOrderArray); echo '</pre>';
+
+echo implode(", ", $custOrderArray);
+$tell = implode($custOrderArray, ", ");
+echo "<br>";
+echo "This is after implode " . $tell; */
+?>
+<!---------------CART--------><!---------------CART--------><!---------------CART-------->
+
+
+		
 		<!----------------CASE ACTION ON cart_start.php---------------->
-        <p><a href=".?action=show_add_item">Add Item</a></p>
-        <p><a href=".?action=empty_cart">Empty Cart</a></p>
+		<!----.?action=show_cart    takes you to index---->
+        <p><a href="?action=show_add_item">Add Item</a></p>
+        <p><a href="?action=empty_cart">Empty Cart</a></p>	
     </main>
 </body>
 </html>

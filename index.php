@@ -1,6 +1,5 @@
 <?php
 require_once('database.php');
-
 ?>
 <!DOCTYPE html>
 <html>
@@ -154,7 +153,7 @@ html {
 <main>
 	
 	<!---  ADD IN When pressed reset cart -->
-	<br><form action="menu.php"
+	<br><form action="cart_start.php"
               id="add_order_form" name="menu" align="center">
 	<button class="button buttonO" type="submit" name="menu" value="View Menu" style="height:70px;width:200px;font-size:25px">View Menu</button><br>
 	</form>
@@ -169,7 +168,7 @@ html {
   <div class="overlay">
     <div class="text">
 	<form action="confirmation.php" method="post" align="center">
-	<button class="button buttonDeal" type="submit" name="menu" value="View Menu" style="height:70px;width:200px;font-size:20px">Hot Wheels Combo</button><br>
+	<button class="buttonDeal" type="submit" name="menu" value="View Menu" style="height:70px;width:200px;font-size:20px">Hot Wheels Combo</button><br>
 	
 	 <input type="hidden" name="foodID"
                            value="24">
@@ -186,12 +185,26 @@ html {
   <div class="container_innerR">
   <div class="overlay">
     <div class="text">
-	<form action="confirmation.php" method="post" align="center">
+	<!--<form action="confirmation.php" method="post" align="center">
 	<button class="button buttonDeal" type="submit" name="menu" value="View Menu" style="height:70px;width:200px;font-size:20px">Flying V Combo</button><br>
 	
 	  
  <input type="hidden" name="foodID"
-                           value="10">
+                           value="10">-->
+						   <form action="confirmation.php" method="post">
+	<input type="hidden" name="action" value="add">
+	<!--<button class="button buttonO" type="submit" name="menu" value="home">Add to cart</button><br>-->
+	<button class="buttonDeal" type="submit" name="menu" value="View Menu" style="height:70px;width:200px;font-size:20px">Flying V Combo</button><br>
+	<?php foreach ($products as $key => $product) : ?>
+	<input type="hidden" name="foodID"
+                           value="<?php echo $product['foodID']; ?>">
+<input type="hidden" name="foodName"
+                           value="<?php echo $product['foodName']; ?>">	
+<input type="hidden" name="price"
+                           value="<?php echo $product['foodprice']; ?>">							   
+							<?php //$name =  ?>
+							<?php endforeach; ?>
+	</form>
   
 	
 	</form>

@@ -22,22 +22,32 @@
             <?php foreach($products as $key => $product) :
                 $cost = number_format($product['cost'], 2);
                 $name = $product['name'];
-                $item = $name . ' ($' . $cost . ')';
+                $item = $name . ' ($' . $cost . ')'; //Used in option
             ?>
+			<!---   Shows the items ----><!---   Shows the items ---->
                 <option value="<?php echo $key; ?>">
                     <?php echo $item; ?>
                 </option>
-            <?php endforeach; ?>
+            <!---   Shows the items ----><!---   Shows the items ---->
+			<?php endforeach; ?>
             </select><br>
 			<br>
 
-			
+			            <label>Quantity:</label>
+            <select name="itemqty">
+            <?php for($i = 1; $i <= 10; $i++) : ?>
+                <option value="<?php echo $i; ?>">
+                    <?php echo $i; ?>
+                </option>
+            <?php endfor; ?>
+            </select><br>
 			
 			
             <label>&nbsp;</label>
             <input type="submit" value="Add Item">
         </form>
-        <p><a href="show_cart.php">View Cart</a></p>    
+		<!----.?action=show_cart    takes you to index---->
+        <p><a href="?action=show_cart">View Cart</a></p>    
     </main>
 </body>
 </html>

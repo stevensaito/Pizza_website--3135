@@ -62,7 +62,7 @@ div {
 	
 	<br><div><span style="font-size: 25px;">
 	<br><p align="center">Thank you for your order!
-	<p align="center">Your order will arrive in 30 minutes at
+	<p align="center">Your order will arrive in 30 minutes, at
 	
 	
 <?php
@@ -76,6 +76,7 @@ echo ''.$convertedTime;
 	<form action="index.php"
               id="add_order_form" name="menu" align="center">
 	<button class="button buttonO" type="submit" name="menu" value="home" style="height:50px;width:150px;font-size:20px">Return Home</button><br>
+	<?php unset($_SESSION['cart13']); ?>
 	</form>
 
 	
