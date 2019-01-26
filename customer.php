@@ -9,7 +9,7 @@ require('database.php');
 //$foodName = $_SESSION['cart'];
 //echo "<br>";
 //echo $_SESSION['total'];
-$total = $_SESSION['total'];
+//$total = $_SESSION['total'];
 
 
 //$cars=array("Volvo","BMW","Toyota");
